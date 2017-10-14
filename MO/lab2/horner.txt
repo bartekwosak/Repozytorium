@@ -1,0 +1,10 @@
+function[wynik] = horner(wspolczynniki,x)
+format long g
+%HORNER Funkcja oblicza wartoœæ wielomianu w punkcie x dla wspó³czynników.
+%Przyjmuje dwa parametry: wektor wspó³czynników oraz punkt x.
+%Zwraca wartoœæ wielomianu.
+    wynik = wspolczynniki(1);
+    for i=1:size(wspolczynniki,2)-1
+          wynik = wynik * x + wspolczynniki(i+1);
+    end
+end

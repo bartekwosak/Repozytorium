@@ -1,0 +1,20 @@
+mkdir A
+mkdir B
+cd A
+mkdir AA
+mkdir BB
+cd AA
+mkdir AAA
+mkdir BBB
+cd ../../B
+mkdir CC
+cd
+cd A/AA/BBB
+pwd
+/home/80017/A/AA/BBB
+cd ../../../B/CC
+cd ../
+rmdir CC
+cd ../
+rm -rf A
+rm -rf B
