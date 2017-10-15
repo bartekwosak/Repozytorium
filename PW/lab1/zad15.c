@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
 				printf("Plik regularny\n");
 				break;
 			case S_IFSOCK:
-			       	printf("Socket\n");
+			    printf("Socket\n");
 				break;
 			default: 
 				printf("Nieznany\n");
@@ -53,6 +53,11 @@ int main(int argc, char *argv[]) {
 		}
 
 		printf("- Prawa dostepu: ");
+		if (S_ISDIR(sb.st_mode)) 
+			printf("d");
+		else 
+			printf("-");
+			
 		if (sb.st_mode & S_IRUSR)
 			printf("r");
 		else
