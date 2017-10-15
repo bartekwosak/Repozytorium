@@ -53,11 +53,6 @@ int main(int argc, char *argv[]) {
 		}
 
 		printf("- Prawa dostepu: ");
-		if (S_ISDIR(sb.st_mode)) 
-			printf("d");
-		else 
-			printf("-");
-		
 		if (sb.st_mode & S_IRUSR)
 			printf("r");
 		else
@@ -97,19 +92,19 @@ int main(int argc, char *argv[]) {
 		else
 			printf("-\n");	
 
-		printf("- Prawa dostepu [OCT]: %o\n", sb.st_mode);
+		printf("- Typ pliku / Prawa dostepu [OCT]: %o\n", sb.st_mode);
 		printf("- Numer i-wezla: %ld\n", (long)sb.st_ino);
-		printf("- ID urzadzenia, na ktorym jest pozycja w katalogu odpowiadajaca temu plikowi: %ld\n", (long)sb.st_dev);
+		printf("- ID urzadzenia zawierającego plik: %ld\n", (long)sb.st_dev);
 		printf("- Liczba dowiazan: %ld\n", (long)sb.st_nlink);
 		printf("- ID uzytkownika: %hu\n", sb.st_uid);
 		printf("- ID grupy: %hu\n", sb.st_gid);
-		printf("- ID urzadzenia dla znakowych lub blokowych plikow specjalnych: %ld\n", (long)sb.st_rdev);
+		printf("- ID urzadzenia dla plikow specjalnych: %ld\n", (long)sb.st_rdev);
 		printf("- Rozmiar pliku [B]: %ld\n", sb.st_size);
 		printf("- Czas ostatniego dostepu: %s", ctime(&sb.st_atime));
 		printf("- Czas ostatniej modyfikacji: %s", ctime(&sb.st_mtime));
 		printf("- Czas ostatniej zmiany: %s", ctime(&sb.st_ctime));
-		printf("- Optymalny rozmiar bloku dla operacji na plikach [B]: %ld\n", sb.st_blksize);
-		printf("- Biezaca liczba przydzielonych blokow: %ld\n", sb.st_blocks);
+		printf("- Rozmiar bloku systemu plików [B]: %ld\n", sb.st_blksize);
+		printf("- Liczba przydzielonych blokow 512B: %ld\n", sb.st_blocks);
 		
 	}
 	return 0;
