@@ -53,19 +53,19 @@ int main(int argc, char *argv[]) {
 		}
 
 		printf("- Typ pliku / Prawa dostepu: ");
-		printf((S_ISDIR(s.st_mode)) ? "d" : "-");
+		printf((S_ISDIR(sb.st_mode)) ? "d" : "-");
 
-		printf((s.st_mode & S_IRUSR) ? "r" : "-");
-		printf((s.st_mode & S_IWUSR) ? "w" : "-");
-		printf((s.st_mode & S_IXUSR) ? "x" : "-");
+		printf((sb.st_mode & S_IRUSR) ? "r" : "-");
+		printf((sb.st_mode & S_IWUSR) ? "w" : "-");
+		printf((sb.st_mode & S_IXUSR) ? "x" : "-");
 	 
-		printf((s.st_mode & S_IRGRP) ? "r" : "-");
-		printf((s.st_mode & S_IWGRP) ? "w" : "-");
-		printf((s.st_mode & S_IXGRP) ? "x" : "-");
+		printf((sb.st_mode & S_IRGRP) ? "r" : "-");
+		printf((sb.st_mode & S_IWGRP) ? "w" : "-");
+		printf((sb.st_mode & S_IXGRP) ? "x" : "-");
 	 
-		printf((s.st_mode & S_IROTH) ? "r" : "-");
-		printf((s.st_mode & S_IWOTH) ? "w" : "-");
-		printf((s.st_mode & S_IXOTH) ? "x" : "-");
+		printf((sb.st_mode & S_IROTH) ? "r" : "-");
+		printf((sb.st_mode & S_IWOTH) ? "w" : "-");
+		printf((sb.st_mode & S_IXOTH) ? "x" : "-");
 
 		printf("- Typ pliku / Prawa dostepu [OCT]: %o\n", sb.st_mode);
 		printf("- Numer i-wezla: %lu\n", sb.st_ino);
