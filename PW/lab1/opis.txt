@@ -1,0 +1,34 @@
+﻿Zad3. 
+cp /etc/skel/.bashrc .bashrc
+cp /etc/skel/.profile .profile
+vim .bashrc
+
+Zad4. (kod)
+
+Zad6. 
+
+pojedyncze -> podwójne -> pojedyncze
+
+Zad10. (kod)
+
+gcc zad10.c -o zad10 -Wall
+
+Zad11. (kod)
+
+./zad11 ala ma kota
+
+Zad12. (kod)
+
+-----
+
+Zad13/14. (kod)
+
+getpgrp() - zwraca ID grupy procesowej procesu wywołującego. 
+setpgrp() - jeśli proces wywołujący nie jest liderem sesji, setpgrp() ustawia ID grupy procesowej procesu wywołującego na ID procesu wywołującego. Jeśli proces wywołujący funkcję jest liderem, wywołanie funkcji nie przynosi żadnych efektów. 
+
+geteuid() - zwraca efektywny ID użytkownika wywołującego proces.
+getegid() - zwraca efektywny ID grupy wywołującej proces.
+
+Zad15. (kod)
+
+dwa parametry 
