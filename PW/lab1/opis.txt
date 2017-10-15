@@ -1,7 +1,5 @@
 ﻿Zad3. 
-cp /etc/skel/.bashrc .bashrc
-cp /etc/skel/.profile .profile
-vim .bashrc
+vim .bashrc (w cd)
 
 Zad4. (kod)
 
