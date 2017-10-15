@@ -27,8 +27,8 @@ int main(int argc, char *argv[]) {
 		printf("- Typ pliku: ");
 		switch(sb.st_mode & S_IFMT) {
 			case S_IFBLK: 
-				printf("Urzadzenie blokowe\n");
-		      		break;
+				printf("Urzadzenie blokowe\n"); 
+				break;
 			case S_IFCHR: 
 				printf("Urzadzenie znakowe\n");
 				break;
@@ -52,58 +52,28 @@ int main(int argc, char *argv[]) {
 				break;		
 		}
 
-		printf("- Prawa dostepu: ");
-		if (S_ISDIR(sb.st_mode)) 
-			printf("d");
-		else 
-			printf("-");
-			
-		if (sb.st_mode & S_IRUSR)
-			printf("r");
-		else
-			printf("-");
-		if (sb.st_mode & S_IWUSR)
-			printf("w");
-		else
-			printf("-");
-		if (sb.st_mode & S_IXUSR)
-			printf("x");
-		else
-			printf("-");
+		printf("- Typ pliku / Prawa dostepu: ");
+		printf((S_ISDIR(s.st_mode)) ? "d" : "-");
 
-		if (sb.st_mode & S_IRGRP)
-			printf("r");
-		else
-			printf("-");
-		if (sb.st_mode & S_IWGRP)
-			printf("w");
-		else
-			printf("-");
-		if (sb.st_mode & S_IXGRP)
-			printf("x");
-		else
-			printf("-");
-
-		if (sb.st_mode & S_IROTH)
-			printf("r");
-		else
-			printf("-");
-		if (sb.st_mode & S_IWOTH)
-			printf("w");
-		else
-			printf("-");
-		if (sb.st_mode & S_IXOTH) 
-			printf("x\n"); 
-		else
-			printf("-\n");	
+		printf((s.st_mode & S_IRUSR) ? "r" : "-");
+		printf((s.st_mode & S_IWUSR) ? "w" : "-");
+		printf((s.st_mode & S_IXUSR) ? "x" : "-");
+	 
+		printf((s.st_mode & S_IRGRP) ? "r" : "-");
+		printf((s.st_mode & S_IWGRP) ? "w" : "-");
+		printf((s.st_mode & S_IXGRP) ? "x" : "-");
+	 
+		printf((s.st_mode & S_IROTH) ? "r" : "-");
+		printf((s.st_mode & S_IWOTH) ? "w" : "-");
+		printf((s.st_mode & S_IXOTH) ? "x" : "-");
 
 		printf("- Typ pliku / Prawa dostepu [OCT]: %o\n", sb.st_mode);
-		printf("- Numer i-wezla: %ld\n", (long)sb.st_ino);
-		printf("- ID urzadzenia zawierającego plik: %ld\n", (long)sb.st_dev);
-		printf("- Liczba dowiazan: %ld\n", (long)sb.st_nlink);
+		printf("- Numer i-wezla: %lu\n", sb.st_ino);
+		printf("- ID urzadzenia zawierającego plik: %lu\n", sb.st_dev);
+		printf("- Liczba dowiazan: %lu\n", sb.st_nlink);
 		printf("- ID uzytkownika: %hu\n", sb.st_uid);
 		printf("- ID grupy: %hu\n", sb.st_gid);
-		printf("- ID urzadzenia dla plikow specjalnych: %ld\n", (long)sb.st_rdev);
+		printf("- ID urzadzenia dla plikow specjalnych: %lu\n", (long)sb.st_rdev);
 		printf("- Rozmiar pliku [B]: %ld\n", sb.st_size);
 		printf("- Czas ostatniego dostepu: %s", ctime(&sb.st_atime));
 		printf("- Czas ostatniej modyfikacji: %s", ctime(&sb.st_mtime));
