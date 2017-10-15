@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
 			case S_IFREG: 
 				printf("Plik regularny\n");
 				break;
-			case S_IsbOCK:
+			case S_IFSOCK:
 			       	printf("Socket\n");
 				break;
 			default: 
